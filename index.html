@@ -1,17 +1,415 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clément Antoine XAVIER</title>
-    <meta name="description" content="Clément Antoine XAVIER's personal website">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clément Antoine XAVIER — Software Engineer</title>
+  <meta name="description" content="Software engineer focused on systems programming, graphics rendering, distributed systems, infrastructure, real-time communication and XR/AR experimentation.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#2563eb" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#60a5fa" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
+<body>
+  <a href="#main" class="visually-hidden">Skip to main content</a>
 
-<body class="body">
-    <h1>Welcome to Clément Antoine XAVIER's Personal Website</h1>
-    <p>This is a placeholder for the content of the website.</p>
+  <header class="header" role="banner">
+    <div class="container header__inner">
+      <a class="logo" href="#top" aria-label="Clément Antoine XAVIER — home">
+        <svg class="logo__mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <path d="M4 8h24M4 16h18M4 24h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="27" cy="16" r="3" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <span>C.A. XAVIER</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#work">Work</a></li>
+          <li><a class="nav__link" href="#about">About</a></li>
+          <li><a class="nav__link" href="#experiments">Experiments</a></li>
+          <li><a class="nav__link" href="#contact">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle theme">
+          <svg class="theme-toggle__icon" id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="5"></circle>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container">
+        <span class="hero__kicker">Available for systems & product engineering</span>
+        <h1 class="hero__title" id="hero-title">Software Engineer.</h1>
+        <p class="hero__body">I build software that sits close to the metal and close to the user: high-performance renderers, resilient backends, infrastructure automation, real-time communication stacks, and experimental XR tooling. I care about correctness, latency, and clarity of design.</p>
+        <div class="hero__specialties">
+          <span class="hero__specialty">Systems programming</span>
+          <span class="hero__specialty">Graphics / rendering</span>
+          <span class="hero__specialty">Distributed systems</span>
+          <span class="hero__specialty">Infrastructure / DevOps</span>
+          <span class="hero__specialty">Real-time communication</span>
+          <span class="hero__specialty">XR / AR experimentation</span>
+        </div>
+        <div class="hero__actions">
+          <a class="button button--primary" href="#work">View selected work</a>
+          <a class="button button--secondary" href="#contact">Get in touch</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__kicker">Featured Work</span>
+          <h2 class="section__title" id="work-title">Selected projects and case studies.</h2>
+          <p class="section__description">A few representative builds. Each card links to source or demo where available; template links are marked and ready to be replaced.</p>
+        </header>
+
+        <div class="work-list">
+          <article class="case-card">
+            <div class="case-card__content">
+              <div class="case-card__meta">
+                <span>2024</span>
+                <span aria-hidden="true">·</span>
+                <span>Open source</span>
+              </div>
+              <h3 class="case-card__title">High-throughput game server mesh</h3>
+              <p class="case-card__problem"><span class="case-card__label">Problem</span>Existing matchmaking infrastructure could not scale beyond regional single-points-of-failure and introduced unacceptable latency for competitive real-time play.</p>
+              <p class="case-card__challenge"><span class="case-card__label">Technical challenge</span>Designing a stateless gateway layer on top of a gossip-based cluster, with ordered event sourcing and graceful handoff during node rebalancing.</p>
+              <p class="case-card__outcome"><span class="case-card__label">Outcome</span>Reduced average matchmaking latency by 60% and eliminated cross-region failover downtime in production stress tests.</p>
+              <ul class="case-card__stack" aria-label="Technologies used">
+                <li class="case-card__tag">Rust</li>
+                <li class="case-card__tag">Tokio</li>
+                <li class="case-card__tag">Redis</li>
+                <li class="case-card__tag">Kubernetes</li>
+                <li class="case-card__tag">gRPC</li>
+              </ul>
+              <div class="case-card__links">
+                <a class="case-card__link" href="#project-1" target="_blank" rel="noopener noreferrer">GitHub repo <span aria-hidden="true">→</span></a>
+                <a class="case-card__link" href="#project-1-demo" target="_blank" rel="noopener noreferrer">Live demo <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+            <div class="case-card__visual" role="img" aria-label="Abstract visualization of a distributed node mesh"></div>
+          </article>
+
+          <article class="case-card">
+            <div class="case-card__content">
+              <div class="case-card__meta">
+                <span>2023</span>
+                <span aria-hidden="true">·</span>
+                <span>Contract</span>
+              </div>
+              <h3 class="case-card__title">WebGL-based data renderer</h3>
+              <p class="case-card__problem"><span class="case-card__label">Problem</span>A dashboard needed to render tens of thousands of time-series points at 60 fps without loading a heavy charting library.</p>
+              <p class="case-card__challenge"><span class="case-card__label">Technical challenge</span>Implementing adaptive level-of-detail, instanced drawing, and a typed-data pipeline that streams updates from a WebSocket worker.</p>
+              <p class="case-card__outcome"><span class="case-card__label">Outcome</span>Stable 60 fps rendering for 150k+ points on mid-range hardware; bundle size kept under 35 kB gzipped.</p>
+              <ul class="case-card__stack" aria-label="Technologies used">
+                <li class="case-card__tag">TypeScript</li>
+                <li class="case-card__tag">WebGL2</li>
+                <li class="case-card__tag">Web Workers</li>
+                <li class="case-card__tag">Vite</li>
+              </ul>
+              <div class="case-card__links">
+                <a class="case-card__link" href="#project-2" target="_blank" rel="noopener noreferrer">GitHub repo <span aria-hidden="true">→</span></a>
+                <a class="case-card__link" href="#project-2-demo" target="_blank" rel="noopener noreferrer">Live demo <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <div class="case-card__content">
+              <div class="case-card__meta">
+                <span>2023</span>
+                <span aria-hidden="true">·</span>
+                <span>Side project</span>
+              </div>
+              <h3 class="case-card__title">Infrastructure-as-code platform template</h3>
+              <p class="case-card__problem"><span class="case-card__label">Problem</span>Small teams were spending days wiring observability, secrets, and CI/CD for new services.</p>
+              <p class="case-card__challenge"><span class="case-card__label">Technical challenge</span>Creating a composable Terraform/Pulumi baseline with automated OpenTelemetry wiring, policy-as-code guardrails, and zero-downtime deploys.</p>
+              <p class="case-card__outcome"><span class="case-card__label">Outcome</span>New service provisioning dropped from two days to under 30 minutes; rollout errors reduced by 40%.</p>
+              <ul class="case-card__stack" aria-label="Technologies used">
+                <li class="case-card__tag">Terraform</li>
+                <li class="case-card__tag">Pulumi</li>
+                <li class="case-card__tag">GitHub Actions</li>
+                <li class="case-card__tag">OpenTelemetry</li>
+                <li class="case-card__tag">Nix</li>
+              </ul>
+              <div class="case-card__links">
+                <a class="case-card__link" href="#project-3" target="_blank" rel="noopener noreferrer">GitHub repo <span aria-hidden="true">→</span></a>
+                <a class="case-card__link" href="#project-3-demo" target="_blank" rel="noopener noreferrer">Documentation <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__kicker">Technical Skills</span>
+          <h2 class="section__title" id="skills-title">Depth across the stack.</h2>
+          <p class="section__description">I choose tools for the problem, not the hype. Here is where I spend most of my time.</p>
+        </header>
+
+        <div class="skills-grid">
+          <article class="skill-group">
+            <h3 class="skill-group__title">Systems programming</h3>
+            <ul class="skill-group__list">
+              <li class="skill-group__item">Rust</li>
+              <li class="skill-group__item">C / C++</li>
+              <li class="skill-group__item">Go</li>
+              <li class="skill-group__item">Concurrency</li>
+              <li class="skill-group__item">Memory layout</li>
+              <li class="skill-group__item">Profiling</li>
+            </ul>
+          </article>
+
+          <article class="skill-group">
+            <h3 class="skill-group__title">Graphics & rendering</h3>
+            <ul class="skill-group__list">
+              <li class="skill-group__item">WebGL / WebGPU</li>
+              <li class="skill-group__item">OpenGL</li>
+              <li class="skill-group__item">Vulkan basics</li>
+              <li class="skill-group__item">Shaders</li>
+              <li class="skill-group__item">Ray tracing experiments</li>
+              <li class="skill-group__item">Three.js</li>
+            </ul>
+          </article>
+
+          <article class="skill-group">
+            <h3 class="skill-group__title">Distributed systems</h3>
+            <ul class="skill-group__list">
+              <li class="skill-group__item">Consensus</li>
+              <li class="skill-group__item">Event sourcing</li>
+              <li class="skill-group__item">CQRS</li>
+              <li class="skill-group__item">Message queues</li>
+              <li class="skill-group__item">PostgreSQL</li>
+              <li class="skill-group__item">CRDTs</li>
+            </ul>
+          </article>
+
+          <article class="skill-group">
+            <h3 class="skill-group__title">Infrastructure & DevOps</h3>
+            <ul class="skill-group__list">
+              <li class="skill-group__item">Kubernetes</li>
+              <li class="skill-group__item">Terraform / Pulumi</li>
+              <li class="skill-group__item">AWS / GCP</li>
+              <li class="skill-group__item">Observability</li>
+              <li class="skill-group__item">CI/CD</li>
+              <li class="skill-group__item">Nix / Docker</li>
+            </ul>
+          </article>
+
+          <article class="skill-group">
+            <h3 class="skill-group__title">Real-time communication</h3>
+            <ul class="skill-group__list">
+              <li class="skill-group__item">WebRTC</li>
+              <li class="skill-group__item">WebSocket</li>
+              <li class="skill-group__item">gRPC / Protobuf</li>
+              <li class="skill-group__item">Media pipelines</li>
+              <li class="skill-group__item">SFU architecture</li>
+            </ul>
+          </article>
+
+          <article class="skill-group">
+            <h3 class="skill-group__title">XR / AR experimentation</h3>
+            <ul class="skill-group__list">
+              <li class="skill-group__item">WebXR</li>
+              <li class="skill-group__item">Computer vision</li>
+              <li class="skill-group__item">Spatial audio</li>
+              <li class="skill-group__item">SLAM experiments</li>
+              <li class="skill-group__item">Unity / Unreal</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__kicker">About</span>
+          <h2 class="section__title" id="about-title">Engineering-first, product-aware.</h2>
+        </header>
+        <div class="about__content">
+          <div class="about__body">
+            <p>I am a software engineer with a systems mindset and a product eye. Over the last several years I have worked across high-performance rendering, backend infrastructure, and real-time communication systems — often in roles that require bridging deep technical work with cross-functional delivery.</p>
+            <p>I value measurable outcomes: latency budgets, test coverage, deployment frequency, and maintainable code. I am comfortable owning a feature from architecture to production, debugging a race condition at 2 a.m., or explaining a technical trade-off to a non-engineering audience.</p>
+            <p>When I am not shipping, I experiment with graphics pipelines, WebXR prototypes, and new browser APIs — usually to understand what is stable enough to bet on.</p>
+          </div>
+          <p class="about__status">Open to senior software engineering roles</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experiments" aria-labelledby="experiments-title">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__kicker">Experiments</span>
+          <h2 class="section__title" id="experiments-title">Modern browser features, isolated and optional.</h2>
+          <p class="section__description">These demos are sandboxed. They detect support before running, degrade gracefully, and never affect the core portfolio experience. Each includes an explanation of why it is not a hard dependency in production work.</p>
+        </header>
+
+        <div class="experiment-grid">
+          <article class="experiment-card" data-experiment="ai-summary">
+            <div class="experiment-card__header">
+              <h3 class="experiment-card__title">Browser AI summary</h3>
+              <span class="experiment-card__badge">Experimental</span>
+            </div>
+            <div class="experiment-card__body">
+              <p><strong>What it does.</strong> Uses the browser's built-in Prompt API or Summarizer API to condense a project description without a server round-trip.</p>
+              <p><strong>Why it is interesting.</strong> Local inference removes network latency and keeps data on-device.</p>
+              <p><strong>Why not a hard dependency.</strong> Availability is vendor-specific, model quality varies, and fallback summarization must exist for unsupported browsers.</p>
+            </div>
+            <div class="experiment-card__sandbox" id="ai-summary-sandbox">
+              <p class="experiment-card__label" id="ai-summary-status">Status</p>
+            </div>
+            <div class="experiment-card__status">
+              <span class="experiment-card__support" id="ai-summary-support">Checking support…</span>
+              <button class="button button--small button--secondary" id="ai-summary-trigger" type="button" hidden>Try demo</button>
+            </div>
+            <div class="experiment-card__fallback" id="ai-summary-fallback">
+              <p>Fallback summary: the game server mesh is a Rust/Tokio cluster that reduces matchmaking latency through gossip-based service discovery and ordered event sourcing.</p>
+            </div>
+          </article>
+
+          <article class="experiment-card" data-experiment="document-pip">
+            <div class="experiment-card__header">
+              <h3 class="experiment-card__title">Document Picture-in-Picture</h3>
+              <span class="experiment-card__badge">Experimental</span>
+            </div>
+            <div class="experiment-card__body">
+              <p><strong>What it does.</strong> Opens a small floating window containing a live status panel, useful for monitoring builds or calls while browsing another tab.</p>
+              <p><strong>Why it is interesting.</strong> The API lets any HTML element live in a detached, always-on-top window, unlike video-only PiP.</p>
+              <p><strong>Why not a hard dependency.</strong> Requires user gesture, permission prompts, and is only supported in Chromium-based browsers.</p>
+            </div>
+            <div class="experiment-card__sandbox" id="document-pip-sandbox">
+              <div class="pip-status-panel" role="region" aria-label="Build status panel">
+                <div class="pip-status-panel__metric"><span>Build</span><span id="pip-build-status">passing</span></div>
+                <div class="pip-status-panel__metric"><span>Latency</span><span id="pip-latency">24 ms</span></div>
+                <div class="pip-status-panel__metric"><span>Region</span><span>eu-west-1</span></div>
+              </div>
+            </div>
+            <div class="experiment-card__status">
+              <span class="experiment-card__support" id="document-pip-support">Checking support…</span>
+              <button class="button button--small button--secondary" id="document-pip-trigger" type="button" hidden>Open PiP panel</button>
+            </div>
+          </article>
+
+          <article class="experiment-card" data-experiment="search-reveal">
+            <div class="experiment-card__header">
+              <h3 class="experiment-card__title">hidden=until-found</h3>
+              <span class="experiment-card__badge">Experimental</span>
+            </div>
+            <div class="experiment-card__body">
+              <p><strong>What it does.</strong> Reveals hidden content when the user uses the browser's in-page search (Ctrl+F / Cmd+F) and a match is found.</p>
+              <p><strong>Why it is interesting.</strong> It lets long pages keep progressive disclosure without breaking find-in-page.</p>
+              <p><strong>Why not a hard dependency.</strong> Support is still limited; content must remain accessible via ordinary disclosure when unsupported.</p>
+            </div>
+            <div class="experiment-card__sandbox" id="search-reveal-sandbox">
+              <div class="search-reveal-demo">
+                <p class="search-reveal-demo__hint">Use Ctrl+F / Cmd+F and search for “reveal”.</p>
+                <div hidden="until-found" id="search-reveal-target" class="search-reveal-demo__target">
+                  <p>This block was hidden until you searched for it. It uses the <code>hidden="until-found"</code> attribute and fires a <code>beforematch</code> event when discovered.</p>
+                </div>
+                <p id="search-reveal-log" class="search-reveal-demo__hint" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="experiment-card__status">
+              <span class="experiment-card__support" id="search-reveal-support">Checking support…</span>
+              <button class="button button--small button--secondary" id="search-reveal-trigger" type="button" hidden>Try demo</button>
+            </div>
+          </article>
+
+          <article class="experiment-card" data-experiment="view-transition">
+            <div class="experiment-card__header">
+              <h3 class="experiment-card__title">View transitions</h3>
+              <span class="experiment-card__badge">Experimental</span>
+            </div>
+            <div class="experiment-card__body">
+              <p><strong>What it does.</strong> Smoothly animates between two DOM states using the browser's native cross-document or same-document view transition API.</p>
+              <p><strong>Why it is interesting.</strong> It gives SPA-like transitions without the routing complexity or performance cost of a full framework.</p>
+              <p><strong>Why not a hard dependency.</strong> Support is behind flags or limited to Chromium; the page must work instantly with no animation when unsupported.</p>
+            </div>
+            <div class="experiment-card__sandbox" id="view-transition-sandbox">
+              <div class="view-transition-sandbox">
+                <div class="view-transition-sandbox__state" id="vt-state-a">
+                  <p class="experiment-card__label">Overview</p>
+                  <p>Project summary and high-level architecture.</p>
+                </div>
+                <div class="view-transition-sandbox__state is-hidden" id="vt-state-b">
+                  <p class="experiment-card__label">Metrics</p>
+                  <p>Latency: 24 ms · Throughput: 12 k req/s · Availability: 99.99%</p>
+                </div>
+                <button class="button button--small button--secondary" id="vt-toggle" type="button">Toggle state</button>
+              </div>
+            </div>
+            <div class="experiment-card__status">
+              <span class="experiment-card__support" id="view-transition-support">Checking support…</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__kicker">Contact</span>
+          <h2 class="section__title" id="contact-title">Let’s build something solid.</h2>
+          <p class="section__description">Template links below. Replace with your own email, GitHub, and LinkedIn URLs.</p>
+        </header>
+
+        <div class="contact__links">
+          <a class="contact-card" href="mailto:you@example.com" target="_blank" rel="noopener noreferrer">
+            <svg class="contact-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+            <div>
+              <div class="contact-card__label">Email</div>
+              <div class="contact-card__value">you@example.com</div>
+            </div>
+          </a>
+
+          <a class="contact-card" href="#github" target="_blank" rel="noopener noreferrer">
+            <svg class="contact-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+              <path d="M9 18c-4.51 2-5-2-7-2"></path>
+            </svg>
+            <div>
+              <div class="contact-card__label">GitHub</div>
+              <div class="contact-card__value">github.com/username</div>
+            </div>
+          </a>
+
+          <a class="contact-card" href="#linkedin" target="_blank" rel="noopener noreferrer">
+            <svg class="contact-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+            <div>
+              <div class="contact-card__label">LinkedIn</div>
+              <div class="contact-card__value">linkedin.com/in/username</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year">2026</span> Clément Antoine XAVIER. Built as a static site with semantic HTML and progressive enhancement.</p>
+      <p>Template placeholders marked with “#”.</p>
+    </div>
+  </footer>
 </body>
-
 </html>
